@@ -1,0 +1,37 @@
+{
+  "name": "lisk-hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js | npx bunyan -o short",
+    "print_tx": "node src/client/print_sendable_hello-world.js | python -m json.tool",
+    "send_tx": "node src/client/print_sendable_hello-world.js | tee >(curl -X POST -H 'Content-Type: application/json' -d @- localhost:4000/api/transactions)"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@liskhq/lisk-constants": "^1.2.3",
+    "@liskhq/lisk-cryptography": "^2.2.0",
+    "@liskhq/lisk-transactions": "^2.3.1",
+    "@liskhq/lisk-validator": "^0.2.1",
+    "husky": "^3.0.9",
+    "lisk-sdk": "^2.3.6",
+    "pretty-quick": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "1.18.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
