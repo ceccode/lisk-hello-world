@@ -18,7 +18,7 @@
     "@liskhq/lisk-transactions": "^2.3.1",
     "@liskhq/lisk-validator": "^0.2.1",
     "husky": "^3.0.9",
-    "lisk-sdk": "^2.3.6",
+    "lisk-sdk": "^5.2.2",
     "pretty-quick": "^2.0.1"
   },
   "devDependencies": {
